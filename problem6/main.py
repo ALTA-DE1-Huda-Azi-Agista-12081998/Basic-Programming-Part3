@@ -1,6 +1,14 @@
 def full_prima(N):
     # your code here
-    return ''
+    def is_prime(n):
+        return n > 1 and all(n % i != 0 for i in range(2, n))
+
+    for digit_str in str(N):
+        digit = int(digit_str)
+        if not is_prime(digit):
+            return False
+    return True
+    
 
 if __name__ == '__main__':
     print(full_prima(2)) # True
